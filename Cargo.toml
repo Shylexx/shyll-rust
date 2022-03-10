@@ -1,0 +1,24 @@
+[package]
+name = "shyll"
+description = "A Rust Based Shell"
+version = "0.1.0"
+edition = "2021"
+authors = ["Shylexx"]
+readme = "README.md"
+licence = "MIT"
+
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+chrono = "0.4.19"
+is_executable = "1.0.1"
+
+[profile.release]
+opt-level = "s"
+strip = "debuginfo"
+lto = "thin"
+
+[[bin]]
+name = "shyll"
+path = "src/shyll.rs"
